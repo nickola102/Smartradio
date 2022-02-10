@@ -20,11 +20,50 @@ public class Radio {
 
     public void setNextStation() {
 
-        if (currentStation >= 9) {
+        if (currentStation == 9) {
             currentStation = 0;
-                    }
-        else   {
-            currentStation ++;
+        } else {
+            currentStation++;
+        }
+    }
+
+    public void setPrevStation() {
+
+        if (currentStation == 0) {
+            currentStation = 9;
+        } else {
+            currentStation--;
+        }
+    }
+
+    public int getCurrentVolume() {
+
+        return currentVolume;
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume > 10) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+
+    }
+
+    public void makeLouder() {
+
+        if (currentVolume == 10) {
+            currentVolume = currentVolume;
+        } else {
+            currentVolume++;
+        }
+    }
+
+    public void makeQuieter() {
+
+        if (currentVolume == 0) {
+            currentVolume = currentVolume;
+        } else {
+            currentVolume--;
         }
     }
 }
